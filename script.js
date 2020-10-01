@@ -1,0 +1,1 @@
+$('currentDay').text(moment().toDate())
