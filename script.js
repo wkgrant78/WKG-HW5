@@ -52,7 +52,7 @@ for(const property in workDay) {
     counter ++;
   }
 
-  // referenced from stackoverflow
+  // referenced from stackoverflow - didn't help
   const rows = document.getElementsByClassName("row");
   let currentHour = parseInt(moment().format('H'));
   

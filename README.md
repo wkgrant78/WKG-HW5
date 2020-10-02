@@ -17,8 +17,19 @@ Create a simple calendar application that allows the user to save events for eac
 
 ### DEVELOPMENTS/COMMITS
 
+* created intial repo, html, css, and README
+* created calendar container, started to develop js
+* continued working on js, everything working except timebock color change; created pseudo code to help debug 
+* continued color change debugging - still not working
+* updated html & css according to js changes
+* deleted excess code in js
+* final push to repo - color change still not working
 
 ### IMPROVEMENTS/QUESTIONS:
+
+* need to work on organization - I was getting confused with all the changes made trying to get color change to work
+* need to push more frequently to track changes
+* know I need to convert the string "time" to be compared to moment().format in order to get timeblock to change color, not sure how to do that
 
 
 ### REQUIREMENTS:
@@ -27,7 +38,10 @@ You'll need to use the [Moment.js](https://momentjs.com/) library to work with d
 
 ### REQUIRED URLs:
 
-* The URL of the deployed application.
+* The URL of the deployed application
+
+https://wkgrant78.github.io/WKG-HW5/
 
 * The URL of the GitHub repo
 
+https://github.com/wkgrant78/WKG-HW5
