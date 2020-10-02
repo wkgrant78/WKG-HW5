@@ -22,17 +22,17 @@
   </head>
 
   <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <br>
-      <p  id="currentDay" class="lead"></p>
+    <header class="container">
+      <header class="jumbotron">
+        <h1 class="display-3">Work Day Scheduler</h1>
+        <p class="lead">A simple calendar app for scheduling your work day</p>
+      <div class="row justify-content-center" id="date-today"><h6></h6></div>
     </header>
 
     <div class="container">
       <!-- Time blocks (08:00 - 17:00), event details, save to calendar -->
 
-      <div id="row1" class="row justify-content-md-center border-top border-bottom calendar-row" >
+      <div id="row1" class="row content-md-center border-top border-bottom calendar-row" >
         <div id="time08" class="col-md-2">8:00 AM</div>
         <textarea rows="3" id="details" class="col-md-9"></textarea>
         <button id="save" class="col-md-1"><i class="fa fa-floppy-o" style="font-size:20px"></i></button>
@@ -101,6 +101,7 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script>src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es-us.js"</script>
     <script src="script.js"></script>
   </body>
 </html>
