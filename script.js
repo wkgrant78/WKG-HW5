@@ -31,22 +31,56 @@ for(const property in workDay) {
     let textEntry = "#textarea" + counter;
     $(textEntry).text(workDay[property]);
     let timeId = "#time" + counter;
-    let currentHour = moment().format();
+    let currentTime = moment().format('H');
     let timeString = $(timeId).text();
     
+    var hourPast = hourPast < currentTime;
+    var hourNow = currentTime;
+    var hourFuture = hourFuture < currentTime;
+
+
     // var currentTime = $('#date-today').text(moment().format('dddd') + ", " + moment().format('MMMM Do YYYY, h:mm:ss a'));
     // if/else for past/current/future times
-    if(currentHour < timeId) {
-      $(textEntry).addClass("past-hour");
-    } else if (currentHour > timeId) {
-      $(textEntry).addClass("future-hour");
+    if(currentTime < timeId) {
+      $(textEntry).addClass("hourPast");
+      console.log(hourPast)
+    } else if (currentTime > timeId) {
+      $(textEntry).addClass("hourFuture");
     } else {
-      $(textEntry).addClass("present-hour");
+      $(textEntry).addClass("hourNow");
     }
     counter ++;
   }
 
+  // referenced from stackoverflow
+  const rows = document.getElementsByClassName("row");
+  let currentHour = parseInt(moment().format('H'));
   
+  Array.from(rows).forEach(row => {
+    let
+      rowIdString = row.id,
+      rowHour;
+    if (rowIdString) {
+      rowHour = parseInt(rowIdString);
+    }
+    if (rowHour) {
+      // Compares row id to current hour and sets color accordingly
+      if (currentHour === rowHour) {
+        setColor(row, "red");
+      } else if ((currentHour < rowHour) && (currentHour > rowHour - 6)) {
+        setColor(row, "green");
+      } else if ((currentHour > rowHour) && (currentHour < rowHour + 6)) {
+        setColor(row, "lightgrey");
+      } else {
+        setColor(row, "white");
+      }
+    }
+  });
+  
+  function setColor(element, color) {
+    element.style.backgroundColor = color;
+  }
+
   // on click saves teaxarea value
   $("button").click(function() {
     value = $(this).siblings("textarea").val();
